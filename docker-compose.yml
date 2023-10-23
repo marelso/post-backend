@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  postgres-db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: 'post-api'
+      POSTGRES_USER: 'post-api-user'
+      POSTGRES_PASSWORD: 'post-api-pass'
+    ports:
+      - 5432:5432
