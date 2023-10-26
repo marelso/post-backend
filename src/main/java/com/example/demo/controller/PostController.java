@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.PostService;
+import com.example.demo.service.PostService;
 import com.example.demo.dto.PostCreationDto;
 import com.example.demo.dto.PostDto;
 import com.example.demo.dto.factory.PostFactory;

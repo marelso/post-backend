@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.service;
 
 import com.example.demo.domain.Post;
 import com.example.demo.dto.PostCreationDto;
