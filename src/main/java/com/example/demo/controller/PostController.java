@@ -32,6 +32,16 @@ public class PostController {
         return factory.from(service.create(request));
     }
 
+    @PutMapping("/{id}")
+    public PostDto update(@PathVariable Integer id, @RequestBody PostDto request) {
+        return factory.from(service.update(id, request));
+    }
+
+    @PatchMapping("/{id}")
+    public void changeStatus(@PathVariable Integer id, @RequestParam Boolean status) {
+        service.updateStatus(id, status);
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         delete(id);
