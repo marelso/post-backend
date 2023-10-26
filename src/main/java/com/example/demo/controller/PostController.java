@@ -20,4 +20,9 @@ public class PostController {
     private Page<PostDto> get(@ApiIgnore Pageable pageable) {
         return service.list(pageable).map(factory::from);
     }
+
+    @GetMapping("/{id}")
+    private PostDto get(@PathVariable Integer id) {
+        return factory.from(service.get(id));
+    }
 }
