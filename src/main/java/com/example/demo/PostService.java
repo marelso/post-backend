@@ -6,6 +6,8 @@ import com.example.demo.dto.PostDto;
 import com.example.demo.dto.factory.PostFactory;
 import com.example.demo.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,8 +28,8 @@ public class PostService {
                 .orElseThrow(() -> new RuntimeException("Nothing found here."));
     }
 
-    public List<Post> list() {
-        return repository.findAll();
+    public Page<Post> list(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     public void delete(Integer reference) {
