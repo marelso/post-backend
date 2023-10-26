@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.PostService;
+import com.example.demo.dto.PostCreationDto;
 import com.example.demo.dto.PostDto;
 import com.example.demo.dto.factory.PostFactory;
 import lombok.RequiredArgsConstructor;
@@ -17,12 +18,17 @@ public class PostController {
     private final PostFactory factory;
 
     @GetMapping
-    private Page<PostDto> get(@ApiIgnore Pageable pageable) {
+    public Page<PostDto> get(@ApiIgnore Pageable pageable) {
         return service.list(pageable).map(factory::from);
     }
 
     @GetMapping("/{id}")
-    private PostDto get(@PathVariable Integer id) {
+    public PostDto get(@PathVariable Integer id) {
         return factory.from(service.get(id));
+    }
+
+    @PostMapping
+    public PostDto post(@RequestBody PostCreationDto request) {
+        return factory.from(service.create(request));
     }
 }
