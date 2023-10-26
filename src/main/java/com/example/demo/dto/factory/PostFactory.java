@@ -55,7 +55,7 @@ public class PostFactory {
                 .collect(Collectors.toList());
     }
 
-    private PostDto from(Post entity) {
+    public PostDto from(Post entity) {
         var dto = new PostDto();
 
         dto.setReference(entity.getId());
