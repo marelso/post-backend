@@ -40,12 +40,12 @@ public class PostFactory {
     }
 
     public Post from(Post entity, PostDto dto) {
-        entity.setHeadline(entity.getHeadline());
-        entity.setDescription(entity.getDescription());
-        entity.setContent(entity.getContent());
-        entity.setPreviewImage(entity.getPreviewImage());
-        entity.setBannerImage(entity.getBannerImage());
-        entity.setStatus(entity.getStatus());
+        entity.setHeadline(dto.getHeadline());
+        entity.setDescription(dto.getDescription());
+        entity.setContent(dto.getContent());
+        entity.setPreviewImage(dto.getPreviewImage());
+        entity.setBannerImage(dto.getBannerImage());
+        entity.setStatus(dto.getStatus());
 
         return entity;
     }
