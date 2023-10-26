@@ -31,4 +31,9 @@ public class PostController {
     public PostDto post(@RequestBody PostCreationDto request) {
         return factory.from(service.create(request));
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        delete(id);
+    }
 }
