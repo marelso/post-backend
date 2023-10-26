@@ -20,6 +20,7 @@ public class Post {
     private Integer id;
     private String headline;
     private String description;
+    @Column(length = 1000)
     private String content;
     private String previewImage;
     private String bannerImage;
