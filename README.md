@@ -15,4 +15,4 @@ on the other side, in order to stop these resources in your environment you shou
 docker-compose stop
 ```
 
-We also have an script that you can run to setup initial mocks for testing. You can checkout the [test_script.sql](/test_script.sql) file.
+We also have an script that you can run to setup initial mocks for testing. You can check out the [test_script.sql](/test_script.sql) file.
